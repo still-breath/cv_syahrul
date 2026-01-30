@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1769785295.00398 "c:/Users/Syahrul/CV_Syahrul/main.tex" "main.pdf" "main" 1769785296.73087 0
+["pdflatex"] 1769785411.36031 "c:/Users/Syahrul/CV_Syahrul/main.tex" "main.pdf" "main" 1769785413.14296 0
   "91.png" 1756645503 2267651 929a6dac7c14295e8ea37a882492ebc3 ""
   "C:/Users/Syahrul/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1756034341 137254 388c5a3cde67c51897b955ca4dad46f5 ""
   "C:/Users/Syahrul/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1756034334 13258263 3ce4a5aa343751f76cf721892848eb8d ""
@@ -187,10 +187,10 @@
   "C:/Users/Syahrul/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Syahrul/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/Syahrul/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/Syahrul/CV_Syahrul/main.tex" 1769785294 19510 24bacec6848d83c0277c9417ea1cbe16 ""
-  "main.aux" 1769785296 905 8bb37aeb97cf995eff37b1c501932d6b "pdflatex"
-  "main.out" 1769785296 745 3ce7b16f4d8af35e587304be1d91254e "pdflatex"
-  "main.tex" 1769785294 19510 24bacec6848d83c0277c9417ea1cbe16 ""
+  "c:/Users/Syahrul/CV_Syahrul/main.tex" 1769785410 19507 0a3db1b1b9c33f0705b2b39864cba419 ""
+  "main.aux" 1769785412 905 8bb37aeb97cf995eff37b1c501932d6b "pdflatex"
+  "main.out" 1769785412 745 3ce7b16f4d8af35e587304be1d91254e "pdflatex"
+  "main.tex" 1769785410 19507 0a3db1b1b9c33f0705b2b39864cba419 ""
   (generated)
   "main.aux"
   "main.log"
