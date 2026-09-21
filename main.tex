@@ -1,415 +1,174 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
-% Package imports - reordered and fixed for local compilation
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{latexsym}
-\usepackage{xcolor}
-\usepackage{float}
-\usepackage{ragged2e}
-\usepackage[empty]{fullpage}
-\usepackage{wrapfig}
-\usepackage{tabularx}
-\usepackage{titlesec}
+\usepackage{lmodern}
 \usepackage{geometry}
-\usepackage{marvosym}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage{multicol}
+\usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{fontawesome}
 \usepackage{microtype}
-\usepackage{array} % Required for vertical centering in tables
-
-% Font packages - using more compatible options
-\usepackage{lmodern} % Latin Modern fonts (replacement for cfr-lm)
-\usepackage{fontawesome} % FontAwesome icons (more compatible than fontawesome5)
-
-% Hyperref should be loaded last
 \usepackage[hidelinks]{hyperref}
 
-% tcolorbox - using basic version for better compatibility
-\usepackage{tcolorbox}
-
-% Color definitions
-\definecolor{darkblue}{RGB}{0,0,139}
-
-% Page layout
-\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
-\setlength{\multicolsep}{0pt} 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\setlength{\footskip}{4.08pt}
-
-% Hyperlink setup
-\hypersetup{
-    colorlinks=true,
-    linkcolor=darkblue,
-    filecolor=darkblue,
-    urlcolor=darkblue,
-}
-
-% Custom box settings - simplified for better compatibility
-\tcbset{
-    frame code={},
-    center title,
-    left=0pt,
-    right=0pt,
-    top=0pt,
-    bottom=0pt,
-    colback=gray!20,
-    colframe=white,
-    width=\dimexpr\textwidth\relax,
-    enlarge left by=-2mm,
-    boxsep=4pt,
-    arc=0pt,outer arc=0pt,
-}
-
-% URL style
+\geometry{left=1.35cm,right=1.35cm,top=1.05cm,bottom=1.0cm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
 \urlstyle{same}
-
-% Text alignment
 \raggedright
-\setlength{\tabcolsep}{0in}
 
-% Section formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+\definecolor{navy}{HTML}{17324D}
+\definecolor{teal}{HTML}{147D7E}
+\definecolor{muted}{HTML}{52606D}
+\definecolor{rule}{HTML}{C7D1D9}
 
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item{
-    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
-  }
-}
-
-% New command for different font sizes and indentation in bullet points
-\newcommand{\resumeItemMain}[1]{
-  \item #1
-}
-
-\newcommand{\resumeItemSub}[1]{
-  \item[] \hspace{0.05mm} $\diamond$ {\small #1}
-}
-
-\newcommand{\resumeItemSubSub}[1]{
-  \item[] \hspace{0.1mm} $\ast$ {\footnotesize #1}
-}
-
-\newcommand{\resumePOR}[3]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
-    \end{tabular*}
-    \vspace{-2mm}
-}
-
-% Modified resumeSubheading to move dates to right margin
-\newcommand{\resumeSubheading}[4]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#4}} \\
-        \textit{\footnotesize{#3}} & \footnotesize{#2} \\
-    \end{tabular*}
-    \vspace{-2.4mm}
-}
-
-\newcommand{\resumeProject}[4]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#3}} \\
-        \footnotesize{\textit{#2}} & \footnotesize{#4}
-    \end{tabular*}
-    \vspace{-2.4mm}
-}
-
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
-
-% Bullet point symbols for different levels
-\renewcommand{\labelitemi}{\raisebox{0.2ex}{\large$\bullet$}}
-\renewcommand{\labelitemii}{$\vcenter{\hbox{\scriptsize$\circ$}}$}
-\renewcommand{\labelitemiii}{$\vcenter{\hbox{\tiny$\diamond$}}$}
-\renewcommand{\labelitemiv}{$\vcenter{\hbox{\scriptsize$\ast$}}$}
-
-% List environment commands - simplified to avoid nesting issues
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0.1mm]}
-\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
-
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
-\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\hypersetup{colorlinks=true,urlcolor=navy,linkcolor=navy}
 
 \newcommand{\cvsection}[1]{%
-\vspace{2mm}
-\begin{tcolorbox}
-    \textbf{\large #1}
-\end{tcolorbox}
-    \vspace{-4mm}
+  \par\vspace{7pt}
+  {\color{navy}\bfseries\fontsize{10.5}{12}\selectfont #1}\par
+  \vspace{2pt}{\color{teal}\hrule height 1.1pt}\vspace{4pt}
 }
 
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
-\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
-\newcolumntype{C}{>{\centering\arraybackslash}X}%
+\newcommand{\contactsep}{\hspace{7pt}{\color{rule}|}\hspace{7pt}}
 
-% Commands for icon sizing and positioning - simplified
-\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
-\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+\newcommand{\role}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{3.65cm}@{}}
+    \textbf{\color{navy}#1} & \textbf{\small #4}\\
+    \textit{#2} & \textcolor{muted}{#3}
+  \end{tabularx}\vspace{2pt}
+}
 
-% Font options - using more compatible font commands
-\newcommand{\headerfonti}{\sffamily} % Sans serif
-\newcommand{\headerfontii}{\rmfamily} % Roman (serif)
-\newcommand{\headerfontiii}{\ttfamily} % Typewriter
+\newcommand{\software}[3]{%
+  \item \textbf{\color{navy}#1} \textcolor{muted}{\footnotesize | #2}\\[-1pt]
+  #3
+}
 
-% Define personal information
-\newcommand{\name}{Syahrul Fathoni Ahmad} % Your Name
-\newcommand{\course}{Bachelor of Engineering} % Your Course
-\newcommand{\roll}{XXXXXX} % Your Roll No.
-\newcommand{\phone}{8999109204} % Your Phone Number
-\newcommand{\emaila}{syahrulfa1106@gmail.com} % Email 1
-\newcommand{\emailb}{officialemail@nitp.ac.in} % Email 2
-\newcommand{\github}{still-breath} % Github
-\newcommand{\website}{https://syahrul-fathoni.vercel.app} % Website
-\newcommand{\linkedin}{syahrulahmad} % LinkedIn
+\newcommand{\impact}[1]{\item #1}
+
+\newcommand{\leadership}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{3.65cm}@{}}
+    \textbf{\color{navy}#1} \textcolor{muted}{| #2} & \textbf{\small #3}
+  \end{tabularx}\vspace{-1pt}
+  #4\par\vspace{4pt}
+}
+
+\newcommand{\project}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{3.65cm}@{}}
+    \textbf{\color{navy}#1} \textcolor{muted}{\footnotesize | #2} & \textbf{\small #3}
+  \end{tabularx}\vspace{-1pt}
+  #4\par\vspace{4pt}
+}
+
+\newcommand{\compactliststart}{%
+  \begin{itemize}[leftmargin=13pt,label={\color{teal}\raisebox{0.35ex}{\rule{3pt}{3pt}}},
+    itemsep=3.5pt,topsep=1pt,parsep=0pt,partopsep=0pt]
+}
+\newcommand{\compactlistend}{\end{itemize}}
+
+\newcommand{\plainliststart}{%
+  \begin{itemize}[leftmargin=13pt,label={\color{teal}\textbullet},
+    itemsep=2pt,topsep=1pt,parsep=0pt,partopsep=0pt]
+}
+\newcommand{\plainlistend}{\end{itemize}}
 
 \begin{document}
-\sloppy
-\rmfamily % Using standard roman family instead of cmr
+\sffamily
 
-%----------HEADING-----------------
-\parbox{2.35cm}{%
-\includegraphics[width=2cm,clip]{91.png}
-}
-\parbox{\dimexpr\linewidth-2.8cm\relax}{
-\begin{tabularx}{\linewidth}{L r}
-  \textbf{\LARGE \name} & +62-\phone \\
-  \course & \href{mailto:\emailb}{\emaila} \\
-  Computer Engineering & \href{https://www.linkedin.com/in/\linkedin}{linkedin.com/in/\linkedin} \\
-  Institut Teknologi Sepuluh Nopember, Surabaya
-  & \href{https://github.com/\github}{github.com/\github} \\
-  & \href{https://syahrul-fathoni.vercel.app}{syahrul-portfolio-web}
+% Header
+\begin{minipage}[c]{2.05cm}
+  \includegraphics[width=1.78cm]{91.png}
+\end{minipage}%
+\begin{minipage}[c]{\dimexpr\linewidth-2.05cm\relax}
+  {\fontsize{22}{24}\selectfont\bfseries\color{navy} Syahrul Fathoni Ahmad}\\[2pt]
+  {\fontsize{11}{13}\selectfont\bfseries\color{teal} Software Engineer | Full-Stack, Enterprise Systems \& Automation}\\[5pt]
+  {\small
+    \faPhone\ +62 899 9109 204\contactsep
+    \faEnvelope\ \href{mailto:syahrulfa1106@gmail.com}{syahrulfa1106@gmail.com}\contactsep
+    \faMapMarker\ Surabaya, Indonesia\\[2pt]
+    \faLinkedin\ \href{https://www.linkedin.com/in/syahrulahmad}{linkedin.com/in/syahrulahmad}\contactsep
+    \faGithub\ \href{https://github.com/still-breath}{github.com/still-breath}\contactsep
+    \faGlobe\ \href{https://syahrul-fathoni.vercel.app}{Portfolio}
+  }
+\end{minipage}
+
+\cvsection{PROFILE}
+Software Engineer with experience delivering enterprise platforms, full-stack web applications, automation pipelines, and AI/IoT systems. Built business-critical software for up to \textbf{600 employees} and client products serving nearly \textbf{250 active customers}, with ownership spanning requirements, development, deployment, code review, and infrastructure operations.
+
+\cvsection{CORE SKILLS}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries\color{navy}}l@{\hspace{9mm}}X@{}}
+  Full-Stack & Laravel, React.js, Next.js, Go, Python, Express.js, Flask, REST API, SQL, MongoDB, HTML/CSS \\[2pt]
+  Enterprise \& DevOps & SSO, RBAC, audit logging, Git, Docker, Nginx, Apache, on-premise server, VPN, Vercel, Azure \\[2pt]
+  AI, IoT \& Data & PyTorch, TensorRT, YOLO, RT-DETR, Airflow, Jetson Nano, ESP32, Arduino, PyQt, Three.js
 \end{tabularx}
-}
-\vspace{-2mm}
 
-\section{\textbf{Education}}
-\vspace{1mm}
-\setlength{\tabcolsep}{5pt}
-\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}p{8cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{2.5cm}|}
-  \hline
-  \textbf{Degree} & \textbf{Institute} & \textbf{Current CGPA} & \textbf{Year} \\
-  \hline
-  S.T., Teknik Komputer & Institut Teknologi Sepuluh Nopember, Surabaya & 3.43/4.0 & Aug 2025 \\ 
-  \hline
+\cvsection{PROFESSIONAL EXPERIENCE}
+\role{PT. Aldzama}{Supervisor Software Engineering}{Gresik, Indonesia}{Oct 2025 -- Present}
+{\small\textbf{Selected software developed}}
+\compactliststart
+  \software{AZM Employee Portal}{SSO, RBAC, audit logging}{Developed a centralized employee gateway that provides one-time login and role-based access to internal applications. Integrated RISE employee profiles, announcements, language/theme settings, and login/application activity logs to strengthen usability, governance, and auditability.}
+  \software{HRIS \& Attendance ERP}{Laravel, SQL, on-premise deployment}{Built and maintained an internal HR platform for \textbf{approximately 600 employees}, covering attendance, timesheets, leave requests, and payroll export for direct bank transfers. Replaced recurring per-user licensing with a customizable in-house system.}
+  \software{Corporate Website \& Subsidiary Platform}{React.js, Laravel API, CMS}{Designed and delivered two CMS-integrated company websites, launching the primary corporate site and developing a separate subsidiary platform.}
+  \software{Refractory Maintenance Dashboard}{Project management, system delivery}{Led project scope, stakeholder alignment, technical execution, and delivery planning for a maintenance monitoring dashboard.}
+  \software{ERP Finance}{Laravel, SQL, enterprise workflow}{Developing an ERP Finance platform for submission, payment, and bookkeeping workflows, improving financial process visibility and control.}
+  \software{Software-Analyzer}{Go, React.js, PostgreSQL}{Developing a server analysis tool that identifies deployed web/software services, used ports, network bridge addresses, storage paths, and potential configuration conflicts.}
+  \software{Automated Web Deployment}{Laravel, PostgreSQL}{Developing an automated deployment workflow that provisions web applications from required input parameters and standardizes server configuration.}
+\compactlistend
+{\small\textbf{Engineering operations}}
+\plainliststart
+  \impact{Managed GitHub workflows and deployments across \textbf{13 active projects}, including pull-request review, code integration, and release readiness.}
+  \impact{Administered on-premise servers, VPN access, Synology secondary backup, and an internal mail server to improve system availability, security, and capacity.}
+\plainlistend
+
+\role{Freelance}{Full-Stack, AI \& IoT Developer}{Hybrid}{2022 -- 2025}
+{\small\textbf{Selected client software}}
+\compactliststart
+  \software{JAREE ITS Academic Journal Platform}{OJS, PHP, MySQL | Jul -- Oct 2025}{Migrated OJS v2 to v3 while preserving service for \textbf{30,000+ users} and \textbf{597,000+ records}; configured the peer-review workflow and created a custom front-end theme.}
+  \software{Retrux-Shelf-Eye}{Python, PyQt, RT-DETR, SAHI | Aug -- Sep 2025}{Built a real-time inventory monitoring application with multi-camera support, sliced object detection, and dynamic directory management.}
+  \software{Padel-Clipper}{Flask, Express.js, ESP32, VPS | Aug 2025}{Developed the monitoring dashboard and backend integration, programmed the IoT trigger device, and deployed the service for nearly \textbf{250 active customers}.}
+  \software{3D Container Loading Optimizer}{React.js, FastAPI, Go, Three.js | Jul -- Aug 2025}{Implemented Genetic Algorithm, BLF, and CLPTAC packing methods with interactive 3D visualization, achieving an \textbf{87--89\% container fill rate}.}
+\compactlistend
+
+\newpage
+
+\cvsection{PROFESSIONAL EXPERIENCE {\normalfont\small(continued)}}
+\role{PT. Telkom Indonesia Regional V}{Programmer Intern, ROC Department}{Surabaya, Indonesia}{Feb 2024 -- Apr 2024}
+{\small\textbf{Software and automation developed}}
+\compactliststart
+  \software{Automated Data Pipeline}{Python, Apache Airflow}{Engineered a web-scraping pipeline that reduced data retrieval latency by more than \textbf{80\%}.}
+  \software{OCR \& Operations Tool Suite}{OCR, validation workflow, Power Automate}{Delivered two OCR workflows and seven integrated tools that reduced manual data processing by \textbf{40\%}; built VPN auto-reconnect automation to prevent connectivity disruptions.}
+\compactlistend
+
+\role{SDN Klampis Ngasem I}{Robotics Extracurricular Tutor}{Surabaya, Indonesia}{Aug 2022 -- Jul 2023}
+\plainliststart
+  \impact{Developed \textbf{10+ Arduino obstacle-avoidance robots} and mentored students for BARONAS ITS, helping the team reach the semi-finals.}
+\plainlistend
+
+\cvsection{SELECTED PROJECTS}
+\project{Smart Finance App}{Go, React.js, Python, PostgreSQL}{Sep 2025}{Built a personal finance platform with a Go API, React interface, PostgreSQL database, and Python ML service for automatic transaction categorization. \href{https://github.com/still-breath/finance-app-go}{\color{teal}\faGithub\ Repository}}
+
+\project{Vehicle Speed Estimation System}{Python, YOLOv8, TensorRT, Jetson Nano}{Feb -- May 2025}{Developed a real-time drone-based system with \textbf{99.55\% peak accuracy}; optimized inference from more than \textbf{90 ms} to less than \textbf{35 ms} on Jetson Nano. \href{https://github.com/still-breath/speed-detection_drone_jetson-nano}{\color{teal}\faGithub\ Repository}}
+
+\project{BengkelMate}{MongoDB, Express.js, React.js, Node.js}{Oct 2024 -- Jan 2025}{Developed a role-based workshop workflow for Security, Service Advisor, and Spare Parts teams; achieved Lighthouse scores of \textbf{96 Performance}, \textbf{96 Best Practices}, and \textbf{92 SEO}. \href{https://github.com/still-breath/webapp-astrawaru}{\color{teal}\faGithub\ Repository}}
+
+\cvsection{EDUCATION}
+\begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{3.2cm}@{}}
+  \textbf{\color{navy}Institut Teknologi Sepuluh Nopember} & \textbf{Aug 2025}\\
+  B.Eng. in Computer Engineering \textcolor{muted}{| GPA: 3.43/4.00} & \textcolor{muted}{Surabaya, Indonesia}
 \end{tabularx}
-\vspace{-4mm}
 
-\section{\textbf{Skills}}
-\vspace{-0.4mm}
-\resumeHeadingSkillStart
-    \resumeSubItem{Full-Stack Development}{: PHP, Laravel, Python, Go (Golang), React.js, Node.js, Express.js, Flask, API, SQL, MongoDB, Three.js, HTML/CSS}
-    \resumeSubItem{AI \& IoT Systems}{: PyTorch, TensorRT, YOLO, LSTM, NLP Jetson Nano, ESP32, Arduino, C++, PyQt, RTMP/RTSP Streaming}
-    \resumeSubItem{DevOps \& Cloud}{: Git, Docker, Nginx, Vercel, Azure, Apache}
-\resumeHeadingSkillEnd
-\vspace{-2mm}
+\cvsection{LEADERSHIP EXPERIENCE}
+\leadership{Head of Human Resources}{BK MWA-WM ITS}{Jul 2023 -- Jul 2024}{Managed recruitment, training, culture, and well-being for \textbf{40+ staff}; processed \textbf{50+ applicants}.}
+\leadership{Project Officer}{TEKMEET 2023}{Jan -- Mar 2023}{Organized a tournament for \textbf{300+ students} and a charity event serving \textbf{50+ people}.}
 
-\section{\textbf{Work Experiences}}
-\vspace{-0.4mm}
-\resumeSubHeadingListStart
-\resumeSubheading
-    {PT. Aldzama}{Gresik, Indonesia}
-    {Software Engineer}{Sep 2025 - Present}
-    \resumeItemListStart
-        \resumeItemMain{\textbf{ERP \& DevOps:}}
-        \resumeItemSub{Set up office \textbf{VPN} and \textbf{on-prem server} environment (PC-based) for secure access and internal deployments.}
-        \resumeItemSub{Built and deployed an \textbf{in-house HRIS \& Attendance ERP} as a \textbf{full-stack developer} using \textbf{Laravel}, designed for \textbf{\textasciitilde 600 employees}.}
-        \resumeItemSub{Eliminated recurring \textbf{monthly subscription} and \textbf{per-user licensing} costs by replacing paid ERP with an internal platform; enables fast customization aligned with operational needs.}
-        \resumeItemSub{Rebuilt the \textbf{company profile website} from scratch using \textbf{React.js} + \textbf{Laravel backend/API}.}
-        \resumeItemMain{\textbf{Project Manager:}}
-        \resumeItemSub{Leading development of the \textbf{Refractory Maintenance Dashboard} as \textbf{Project Manager} (scope, timeline, stakeholders).}
-    \resumeItemListEnd
+\cvsection{CERTIFICATIONS}
+\begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{2.5cm}@{}}
+  \textbf{Internship Certificate} \textcolor{muted}{| PT. Telkom Indonesia Regional V} & Apr 2024 \\
+  \textbf{Intermediate Machine Learning} \textcolor{muted}{| Kaggle} & Dec 2023 \\
+  \textbf{Feature Engineering} \textcolor{muted}{| Kaggle} & Dec 2023
+\end{tabularx}
 
-\resumeSubheading
-    {Freelance}{Hybrid}
-    {Freelancer}{2022 - 2025}
-    \resumeItemListStart
-
-    \item
-    \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
-        \textbf{JAREE ITS (Academic Journal Platform):} & {\footnotesize\textit{July 2025 - Oct 2025}} \\
-        {\footnotesize\textit{Tools:} OJS, PHP, MySQL, CSS} &% {\footnotesize\href{https://github.com/still-breath/container-optimizer}{\textcolor{darkblue}{GitHub}}}
-    \end{tabular*}
-    \vspace{-0.8em}
-    \resumeItemListStart
-    \resumeItemSub{Orchestrated a seamless, live migration of the OJS platform (v2 to v3), ensuring service continuity for \textbf{30k+ users} while upgrading a database of \textbf{597k+ records}.}
-    \resumeItemSub{Engineered the complete academic peer-review workflow and developed a \textbf{custom front-end theme} to enhance user experience.}
-    \resumeItemListEnd
-    
-    \item
-    \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
-    \textbf{Retrux-Shelf-Eye (AI Inventory Management System):} & {\footnotesize\textit{Aug 2025 - Sep 2025}} \\
-    {\footnotesize\textit{Tools:} Python, PyQt, PyTorch} & %{\footnotesize\href{https://github.com/still-breath/retrux-shelf-eye}{\textcolor{darkblue}{GitHub}}}
-    \end{tabular*}
-    \vspace{-0.8em}
-    \resumeItemListStart
-        \resumeItemSub{Developed a real-time shelf stock monitoring application using Python, with a user interface built in \textbf{PyQt}.}
-        \resumeItemSub{Implemented an advanced object detection model (\textbf{RT-DETR}) using \textbf{SAHI} for sliced inference.}
-        \resumeItemSub{Engineered key software utilities based on client needs, including \textbf{multi-camera support} and dynamic directory management.}
-    \resumeItemListEnd
-    \vspace{0.5em}
-    
-    \item
-        \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
-        \textbf{Padel-Clipper (IoT Video Highlight System):} & {\footnotesize\textit{Aug 2025}} \\
-        {\footnotesize\textit{Tools:} Python, Flask, ESP32, Express.js, PHP} & %{\footnotesize\href{https://github.com/still-breath/clipper-dashboard-go}{\textcolor{darkblue}{GitHub}}}
-        \end{tabular*}
-        \vspace{-0.8em}
-        \resumeItemListStart
-            \resumeItemSub{Developed the \textbf{Flask}-based monitoring dashboard and integrated it with a team-built \textbf{Express.js} backend for a real-time video clipping service.}
-            \resumeItemSub{Engineered and programmed an \textbf{IoT push-button device} using \textbf{ESP32} and a custom PCB to trigger highlight captures from IP cameras.}
-            \resumeItemSub{Configured and deployed the entire system on a \textbf{VPS}, successfully scaling the product to serve nearly \textbf{250 active customers}.}
-        \resumeItemListEnd
-        \vspace{0.5em}
-
-        \item
-        \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
-        \textbf{3D Container Loading Optimizer:} & {\footnotesize\textit{July 2025 - Aug 2025}} \\
-        {\footnotesize\textit{Tools:} Python, Golang, FastAPI, React.js, Three.js} &% {\footnotesize\href{https://github.com/still-breath/packaging-box-website}{\textcolor{darkblue}{GitHub}}}
-        \end{tabular*}
-        \vspace{-0.8em}
-        \resumeItemListStart
-            \resumeItemSub{Developed a web-based logistics tool to solve the 3D Bin Packing Problem, achieving a container fill rate of \textbf{87-89\%}.}
-            \resumeItemSub{Researched and implemented multiple packing algorithms in Python, including \textbf{Genetic Algorithm}, BLF, and CLPTAC method to find the optimal solution.}
-            \resumeItemSub{Built the full-stack application with \textbf{React.js}, \textbf{FastAPI}, \textbf{Golang} and a \textbf{Three.js} canvas for 3D visualization.}
-        \resumeItemListEnd
-        \vspace{0.5em}
-
-        % \item
-        % \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
-        % \textbf{ECG Exhibition Prototype (R\&D Collaboration):} & {\footnotesize\textit{Oct 2022 - Dec 2022}} \\
-        % {\footnotesize\textit{Tools:} Python, Raspberry Pi, Biomedical Sensors, Hardware Prototyping} & %{\footnotesize\href{https://github.com/still-breath/container-optimizer}{\textcolor{darkblue}{GitHub}}}
-        % \end{tabular*}
-        % \vspace{-0.8em}
-        % \resumeItemListStart
-        %     \resumeItemSub{Co-developed a functional ECG device for a technical exhibition, validating its performance with a \textbf{95-100\% accuracy} in real-time heart rate detection.}
-        %     \resumeItemSub{Engineered the end-to-end system, from the \textbf{Arduino signal acquisition firmware} to the design and fabrication of the physical, exhibition-ready casing.}
-        % \resumeItemListEnd
-        % \vspace{0.5em}
-
-        
-    \resumeItemListEnd
-
-\resumeSubheading
-    {PT. Telkom Indonesia Regional V}{Surabaya, Indonesia}
-    {Internship Programmer (ROC Department)}{Feb 2024 - Apr 2024}
-    \resumeItemListStart
-        \resumeItemMain{\textbf{Automation \& Data Pipeline Development:}}
-        \resumeItemSub{Reduced data retrieval latency by over \textbf{80\%} by engineering an automated web scraping pipeline with Python and Apache Airflow.}
-        \resumeItemSub{Developed and deployed 2 OCR automation with validation step.}
-        
-        \resumeItemMain{\textbf{System Integration \& Reliability:}}
-        \resumeItemSub{Developed a resilient VPN auto-reconnect system (Power Automate) that effectively \textbf{eliminated connectivity downtime} and prevented work disruptions.}
-        \resumeItemSub{Created a suite of 7 integrated tools that reduced manual data processing tasks by \textbf{40\%}.}
-    \resumeItemListEnd
-
-\resumeSubheading
-    {SDN Klampis Ngasem I}{Surabaya, Indonesia}
-    {Robotics Extracurricular Tutor}{Aug 2022 - Jul 2023}
-    \resumeItemListStart
-        \resumeItemMain{Developed and assembled \textbf{Arduino-based Obstacle Avoidance Robots}, preparing \textit{10+ units} for student use and aligning lessons with an existing robotics curriculum to support progressive learning.}
-        \resumeItemMain{Mentored students in the \textbf{BARONAS competition} by ITS Electrical Engineering, collaborating with a team of three instructors to deliver hands-on sessions, leading the team to reach the \textit{semi-finals}.}
-    \resumeItemListEnd
-\resumeSubHeadingListEnd
-\vspace{-6mm}
-
-\section{\textbf{Individual Projects}}
-\vspace{-0.4mm}
-\resumeSubHeadingListStart
-
-\resumeProject
-    {Smart Finance App (Personal Finance Management System)}
-    {Tools: Go (Golang), React.js, Python, Scikit-learn, PostgreSQL}
-    {Sep 2025}
-    {{}[\href{https://github.com/still-breath/finance-app-go}
-    {\textcolor{darkblue}{\faGithub}}]}
-\resumeItemListStart
-    \resumeItemMain{Developed a full-stack personal finance management application that helps users track income and expenses with intelligent categorization. The system integrates a Go backend, React frontend, and a Python AI service to provide automatic transaction categorization using machine learning.}
-\resumeItemListEnd
-
-\resumeProject
-    {Padel-Clipper (IoT Video Highlight System with Golang)}
-    {Tools: Go (Golang), RESTful API, Flask, Python, PostgreSQL}
-    {June 2025 - August 2025}
-    {{}[\href{https://github.com/still-breath/clipper-dashboard-go}
-    {\textcolor{darkblue}{\faGithub}}]}
-\resumeItemListStart
-    \resumeItemMain{Developed a RESTful API in Go (Golang), leveraging goroutines and channels to efficiently handle concurrent requests from multiple IoT devices for a real-time video clipping service.}
-\resumeItemListEnd
-
-\resumeProject
-    {\parbox{0.8\linewidth}{Vehicle Speed Estimation System Using Drone with Jetson Nano-based YOLOv8 Method}}
-    {Tools: Python, YOLOv8, Jetson-Nano, TensorRT, RTMP}
-    {Feb 2025 - May 2025}
-    {{}[\href{https://github.com/still-breath/speed-detection_drone_jetson-nano}
-    {\textcolor{darkblue}{\faGithub}}]}
-\resumeItemListStart
-    \resumeItemMain{Developed a real-time vehicle speed estimation system, achieving a peak measurement accuracy of \textbf{99.55\%} and consistent performance of over 90\% at an optimal 20-meter altitude.}
-    \resumeItemMain{Trained a superior YOLOv8 model for night-time conditions (mAP50 of \textbf{0.93}) and leveraged \textbf{TensorRT} to triple inference speed (from \textbf{>90ms} to \textbf{<35ms}), enabling real-time processing on the Jetson Nano.}
-\resumeItemListEnd
-
-\resumeProject
-    {BengkelMate: Workshop Business Process Digitalization}
-    {Tools: MERN Stack (MongoDB, Express.js, React.js, Node.js)}
-    {Oct 2024 - Jan 2025}
-    {{}[\href{https://github.com/still-breath/webapp-astrawaru}
-    {\textcolor{darkblue}{\faGithub}}]}
-\resumeItemListStart
-    \resumeItemMain{As part of a three-person team, developed a web application that digitized the workshop workflow through a role-based system for \textbf{Security, Service Advisor, and Spare Parts teams}.}
-    \resumeItemMain{Delivered a high-quality user experience, validated by excellent Lighthouse scores in \textbf{Performance (96)}, \textbf{Best Practices (96)}, and \textbf{SEO (92)}, ensuring a fast and reliable tool for daily operations.}
-\resumeItemListEnd
-\resumeSubHeadingListEnd
-\vspace{-8mm}
-
-\section{\textbf{Campus Organization Experiences}}
-\vspace{-0.4mm}
-\resumeSubHeadingListStart
-\resumeSubheading
-    {BK MWA-WM ITS}{Surabaya, Indonesia}
-    {Head of Human Resources}{Jul 2023 - Jul 2024}
-    \resumeItemListStart
-        \resumeItemMain{Managed the end-to-end employee lifecycle and cultural development for \textbf{40+ staff}, encompassing recruitment \textbf{(processing 50+ applicants)}, training, and employee well-being initiatives.}
-    \resumeItemListEnd
-\resumeSubheading
-    {TEKMEET 2023}{Surabaya, Indonesia}
-    {Project Officer}{Jan 2023 - Mar 2023}
-    \resumeItemListStart
-        \resumeItemMain{Organized sports tournament for \textbf{300+ students} and coordinated charity event serving \textbf{50+ people}.}
-    \resumeItemListEnd
-\resumeSubHeadingListEnd
-\vspace{-6mm}
-
-\section{\textbf{Certifications}}
-\vspace{-0.4mm}
-\resumeSubHeadingListStart
-\resumePOR
-    {Intern – PT. Telkom Indonesia Regional V} % Certification Name
-    {, \href{https://drive.google.com/file/d/1-nwVQKJeIozZTcpPC5dgL05BCwOs9G52/view?usp=sharing}{Internship-Certificate}} % Issuer
-    {Feb 2024 - Apr 2024} % Duration
-    \resumePOR
-    {Intermediate Machine Learning by Kaggle} % Certification Name
-    {, \href{https://drive.google.com/file/d/10e7CyfwJeKg05ooD73OZsyuTeGxPadMf/view?usp=drive_link}{Course}} % Issuer
-    {Dec 2023} % Duration
-    \resumePOR
-    {Feature Engineering by Kaggle} % Certification Name
-    {, \href{https://drive.google.com/file/d/1_ewhJnumW4lnMLSV74YxCJEBM53T57YN/view?usp=sharing}{Course}} % Issuer
-    {Dec 2023} % Duration
-    \resumePOR
-        {Marketing Content with Gapura Digital Google} % Certification Name
-        {, \href{https://drive.google.com/file/d/14aI4HshF3DZK0YVp-r2IjDUmXmzBtc64/view?usp=sharing}{Course}} % Issuer
-        {Sept 2021} % Duration
-\resumeSubHeadingListEnd
 \end{document}
