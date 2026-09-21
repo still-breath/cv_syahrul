@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1789999651.03321 "/Users/syahrul/cv_syahrul/main.tex" "main.pdf" "main" 1789999651.60213 0
-  "/Users/syahrul/cv_syahrul/main.tex" 1789999650.86097 10539 6eba92e489a6783b6483f0f6c812c041 ""
+["pdflatex"] 1790006063.60043 "/Users/syahrul/cv_syahrul/main.tex" "main.pdf" "main" 1790006064.1399 0
+  "/Users/syahrul/cv_syahrul/main.tex" 1790006063.43089 10866 67a9bd6e6214e80384b3a17c8b8cca64 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1254269338 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
@@ -103,9 +103,9 @@
   "/usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1784562051 2985243 abcb1dc59810b57ac74a262bfd87c50e ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
   "91.png" 1784560915.47131 2267651 70205c7ab2113dbbb3704ca411864493 ""
-  "main.aux" 1789999651.55495 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
-  "main.out" 1789999651.23574 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1789999650.86097 10539 6eba92e489a6783b6483f0f6c812c041 ""
+  "main.aux" 1790006064.09495 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
+  "main.out" 1790006063.78992 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1790006063.43089 10866 67a9bd6e6214e80384b3a17c8b8cca64 ""
   (generated)
   "main.aux"
   "main.log"
